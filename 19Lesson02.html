@@ -1,0 +1,282 @@
+<!DOCTYPE HTML>
+<!--
+	Industrious by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+
+<head>
+	<title>Lesson 2 Variables, expressions, and statements</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<link rel="icon" href="images/logo2.ico" />
+	<link rel="stylesheet" href="assets/layui/css/layui.css" media="all">
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<link rel="stylesheet" href="assets/css/codemirror.css" />
+
+	<style>
+		.CodeMirror.cm-s-darcula.CodeMirror-wrap {
+			border-radius: 0.5rem;
+		}
+
+		.CodeMirror.cm-s-darcula.CodeMirror-wrap.CodeMirror-focused {
+			border-color: #ce1b28;
+			box-shadow: 0 0 0 3px #ce1b28;
+		}
+	</style>
+
+	<script>
+		var _hmt = _hmt || [];
+		(function () {
+			var hm = document.createElement("script");
+			hm.src = "https://hm.baidu.com/hm.js?ee3004411cd5552e251d9bc5fc7ac03b";
+			var s = document.getElementsByTagName("script")[0];
+			s.parentNode.insertBefore(hm, s);
+		})();
+	</script>
+
+</head>
+
+<body class="is-preload">
+
+	<!-- Header -->
+	<header id="header">
+		<a class="logo" href="https://testcasecommunity.github.io/">测试用例社区 - Testcase Community</a>
+		<nav>
+			<a href="javascript:login();" id="account">登录</a>
+			<a href="#menu">目录</a>
+		</nav>
+	</header>
+
+	<!-- Nav -->
+	<nav id="menu">
+		<ul class="links">
+			<li><a href="https://testcasecommunity.github.io/">主页</a></li>
+			<li><a href="index.html">CS100 Introduction to Programming</a></li>
+			<li><a href="19Lesson01.html">Lesson 01</a></li>
+			<li><a href="19Lesson02.html">Lesson 02</a></li>
+			<li><a href="19Lesson03.html">Lesson 03</a></li>
+			<li><a href="19Lesson04.html">Lesson 04</a></li>
+			<li><a href="19Lesson05.html">Lesson 05</a></li>
+			<li><a href="19Lesson06.html">Lesson 06</a></li>
+		</ul>
+	</nav>
+
+	<!-- Heading -->
+	<section id="heading">
+		<div class="inner">
+			<h1>Lesson 2</h1>
+			<h1>Variables, expressions, and statements</h1>
+			<h3>From CS100 Summer Homework</h3>
+		</div>
+	</section>
+
+	<!-- Content -->
+	<section id="main" class="wrapper">
+		<div class="inner">
+			<div class="content">
+
+				<fieldset class="layui-elem-field layui-field-title">
+					<legend>文档内容</legend>
+				</fieldset>
+				<div
+					style="padding-left: 100px; padding-right: 100px; font-size: 18px; font-family: Calibri, sans-serif;">
+					<p>A C program is composed of a series of statements, each one inducing one or several operations to
+						be executed. In its simplest form, a statement is a line of code terminated by a semi-­‐colon.
+						There are a number of different types of statements:</p>
+					<ul>
+						<li><span class="layui-badge-dot layui-bg-black"></span>
+							<b><u>Declaration statements:</u></b>
+							A declaration is simply a statement through which we describe an identifier, such as the
+							name of a variable. Through such declarations, the compiler will know which local variables
+							will have to be allocated on the memory stack, and what identifier is used to refer to those
+							variables within their scope. In its simplest form, a declaration statement takes the form:
+							<br><br><b>
+								<div style="text-align: center">type declarator</div>
+							</b><br>
+							where <b>type</b> denotes the type of the variable and <b>declarator</b> the name of that
+							variable. A few
+							primitive variable types sufficient for the solution of the preparatory summer homeworks are
+							listed as follows:
+							<div class="layui-form">
+								<table class="layui-table">
+									<colgroup>
+										<col width="40%">
+										<col>
+									</colgroup>
+									<tbody>
+										<tr>
+											<td><b>char</b></td>
+											<td>8-­‐bit (1-­‐byte) variable representing a character (interchangeably
+												used to represent 8-­‐bit integer
+												numbers)
+											</td>
+										</tr>
+										<tr>
+											<td><b>short, int, long</b></td>
+											<td>Integer numbers for which the (physical) binary representation has a
+												bit‐width of at least 16, 16, and 32 bits, respectively (depending on
+												computer and implementation)</td>
+										</tr>
+										<tr>
+											<td><b>float, double</b></td>
+											<td>Special representations for floating point numbers.
+												Physical bit-­‐width is 32 and 64 bits on most systems.
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							You are invited to do some research by yourself to understand how for example the ASCII
+							encoding scheme is used to define correspondences between numbers and characters such as the
+							letters of the alphabet or other special characters. It is also useful to understand the
+							binary number system, or floating-­‐point number representations:
+							<br><a href="https://en.wikipedia.org/wiki/C_data_types"
+								target="_blank">https://en.wikipedia.org/wiki/C_data_types </a>
+							<br><a href="https://en.wikipedia.org/wiki/ASCII"
+								target="_blank">https://en.wikipedia.org/wiki/ASCII </a>
+							<br><a href="https://en.wikipedia.org/wiki/Single-­‐precision_floating-­‐point_format"
+								target="_blank">https://en.wikipedia.org/wiki/Single-­‐precision_floating-­‐point_format
+							</a>
+							<br><a href="https://en.wikipedia.org/wiki/Double-­‐precision_floating-­‐point_format"
+								target="_blank">https://en.wikipedia.org/wiki/Double-­‐precision_floating-­‐point_format
+							</a>
+							<br><a href="https://en.wikipedia.org/wiki/Binary_number"
+								target="_blank">https://en.wikipedia.org/wiki/Binary_number</a>
+							<br><b>* 你可能会发现国内无法访问维基百科！所以我提供了其在国内的镜像：</b>
+							<br><a href="http://wikipedia.moesalih.com/C_data_types" target="_blank">C data types</a>
+							<br><a href="http://wikipedia.moesalih.com/ASCII" target="_blank">ASCII</a>
+							<br><a href="http://wikipedia.moesalih.com/Single-­‐precision_floating-­‐point_format"
+								target="_blank">Single-­‐precision_floating-­‐point_format</a>
+							<br><a href="http://wikipedia.moesalih.com/Double-­‐precision_floating-­‐point_format"
+								target="_blank">Double-­‐precision_floating-­‐point_format</a>
+							<br><a href="http://wikipedia.moesalih.com/Binary_number" target="_blank">Binary number</a>
+						</li>
+
+						<li><span class="layui-badge-dot layui-bg-black"></span>
+							<b><u>Expression statements:</u></b>
+							Expression statements can be either just a single entity such as a variable or a combination
+							of entities interconnected by operators. The following are simple examples of expressions:
+							<pre><code>a
+a + b
+x = y
+t = u + v x <= y
+++j
+</code></pre>
+							It is useful to read up operator preference to understand in which order the different
+							operations will be executed in case there is more than one. Also note that declaration and
+							expression statements can be combined, as in
+							<pre><code>int a = b + c;</code></pre>
+						</li>
+						<li><span class="layui-badge-dot layui-bg-black"></span>
+							<b><u>Compound statements:</u></b>
+							Compound statements are in fact just a combination of several statements grouped by braces.
+							The sub-­‐statements can again be declaration statements, expression statements, or compound
+							statements. An example would be:
+							<pre><code>{
+pi = 3.141593;
+circumference = 2. * pi * radius;
+area = pi * radius * radius;
+}
+</code></pre>
+						</li>
+						<li><span class="layui-badge-dot layui-bg-black"></span>
+							<b><u>Control statements:</u></b>
+							Control statements are a bit different, as they use special keywords reserved for the
+							compiler and will dynamically influence the program flow based on some conditions. The most
+							basic control statement is the if-­‐statement. It consists of an "<b>if</b>" keyword
+							followed by a
+							condition in parentheses. The condition is an expression that evaluates to either 0 or not
+							(representing an unfulfilled or fulfilled condition, respectively). The closing parenthesis
+							is followed by either a single expression or a compound statement to be conditionally
+							executed. The if-­‐statement may be followed by an else-­‐statement, thus resulting in an
+							if-­‐else-­‐statement. The else-­‐statement simply consists of the keyword "<b>else</b>",
+							again
+							followed by either a single expression or a compound statement, and defines alternative
+							operations to be executed in case the condition is unfulfilled. The following indicates an
+							example of an if-­‐else-­‐statement:
+							<pre><code>if( condition ) 
+  { statements
+}
+else {
+  statements
+}
+</code></pre>
+						</li>
+
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Contact & Donate -->
+	<section id="cta" class="wrapper">
+		<div class="inner">
+			<header class="special">
+				<h2>有话想说？</h2>
+				<ul class="actions special">
+					<a href="https://www.diaochapai.com/survey3000919" target="_blank" class="button primary">联系我们</a>
+				</ul>
+			</header>
+		</div>
+	</section>
+
+
+	<!-- Footer -->
+	<footer id="footer">
+		<div class="inner">
+			<div class="content">
+				<section>
+					<h3>关于社区</h3>
+					<p>测试用例社区（Testcase Community）是希望为学习信息方向相关课程的同学提供便利的社区。
+						在编写程序的过程中，最让人头疼的其实是一些边界、极端的测试用例，以及程序中不起眼的BUG。我希望通过这个社区，可以让所有学习者分享、
+						贡献测试用例，并且方便地进行测试，借此减少DEBUG的时间，提高学习效率，减少抄袭的发生。
+					</p>
+				</section>
+				<section>
+					<h4>快速访问</h4>
+					<ul class="alt">
+						<li><a href="http://www.shanghaitech.edu.cn/" target="_blank">上海科技大学</a></li>
+					</ul>
+				</section>
+				<section>
+					<h4>联系方式</h4>
+					<ul class="plain">
+						<li><a href="mailto:wuhy1@shanghaitech.edu.cn"><i
+									class="icon fa-envelope-o">&nbsp;</i>E-mail</a></li>
+						<li><a href="https://github.com/testcasecommunity" target="_blank"><i
+									class="icon fa-github">&nbsp;</i>Github</a></li>
+					</ul>
+				</section>
+			</div>
+			<div class="copyright">
+				&copy; 2019 Testcase Community. Website support <a href="https://templated.co/"
+					target="_blank">Templated</a>.
+				Picture from <a href="http://www.shanghaitech.edu.cn/mlxy/list.htm" target="_blank">ShanghaiTech</a>.
+				Server support <a href="http://www.dooccn.com/c/" target="_blank">Dooccn</a> <a
+					href="http://github.com/" target="_blank">Github</a>. All rights reserved.
+			</div>
+		</div>
+	</footer>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+
+	<script src="assets/layui/layui.js" charset="utf-8"></script>
+
+	<script src="assets/js/test.min.js"></script>
+	<script>
+		accountInit();
+	</script>
+
+</body>
+
+</html>

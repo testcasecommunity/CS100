@@ -1,0 +1,334 @@
+<!DOCTYPE HTML>
+<!--
+	Industrious by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+	<head>
+		<title>Lesson 3 Fibonacci number generator</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<link rel="icon" href="images/logo2.ico" />
+		<link rel="stylesheet" href="assets/layui/css/layui.css"  media="all">
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/codemirror.css" />
+		
+		<style>
+			.CodeMirror.cm-s-darcula.CodeMirror-wrap{
+				border-radius: 0.5rem;
+			}
+			.CodeMirror.cm-s-darcula.CodeMirror-wrap.CodeMirror-focused {
+				border-color: #ce1b28;
+				box-shadow: 0 0 0 3px #ce1b28; 
+			}
+		</style>
+		
+		<script>
+			var _hmt = _hmt || [];
+			(function () {
+				var hm = document.createElement("script");
+				hm.src = "https://hm.baidu.com/hm.js?ee3004411cd5552e251d9bc5fc7ac03b";
+				var s = document.getElementsByTagName("script")[0];
+				s.parentNode.insertBefore(hm, s);
+			})();
+		</script>
+			
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<a class="logo" href="https://testcasecommunity.github.io/">测试用例社区 - Testcase Community</a>
+				<nav>
+					<a href="javascript:login();" id="account">登录</a>
+					<a href="#menu">目录</a>
+				</nav>
+			</header>
+
+		<!-- Nav -->
+		<nav id="menu">
+			<ul class="links">
+				<li><a href="https://testcasecommunity.github.io/">主页</a></li>
+				<li><a href="index.html">CS100 Introduction to Programming</a></li>
+				<li><a href="19Lesson01.html">Lesson 01</a></li>
+				<li><a href="19Lesson02.html">Lesson 02</a></li>
+				<li><a href="19Lesson03.html">Lesson 03</a></li>
+				<li><a href="19Lesson04.html">Lesson 04</a></li>
+				<li><a href="19Lesson05.html">Lesson 05</a></li>
+				<li><a href="19Lesson06.html">Lesson 06</a></li>
+			</ul>
+		</nav>
+
+		<!-- Heading -->
+			<section id="heading">
+				<div class="inner">
+					<h1>Lesson 3 (Exercise 1)</h1>
+					<h1>Fibonacci number generator</h1>
+					<h3>From CS100 Summer Homework</h3>
+				</div>
+			</section>
+
+		<!-- Content -->
+			<section id="main" class="wrapper">
+				<div class="inner">
+					<div class="content">
+
+						<fieldset class="layui-elem-field layui-field-title">
+							<legend>文档内容</legend>
+						</fieldset>
+						<div
+					style="padding-left: 100px; padding-right: 100px; font-size: 18px; font-family: Calibri, sans-serif;">
+					<p>The Fibonacci sequence of numbers is as follows:</p>
+					<pre><code>0, 1, 1, 2, 3, 5, 8, 13, 21, 34, …</code></pre>
+					<p>It is easily obtained by starting the sequence with the numbers 0 and 1, and then setting each
+						subsequent number as the sum of the two previous ones. The sequence has an interesting
+						application, as a proper arrangement of a sequence of squares of which the side lengths are
+						given by the numbers in the Fibonacci sequence may serve as an approximation of the golden
+						spiral.</p>
+					<div style="text-align: center"><img width="270" height="170" alt="image"
+							src="images/Image_002.png" /></div>
+					<p align="center">[source: <a href="https://en.wikipedia.org/wiki/Fibonacci_number"
+							target="_blank">https://en.wikipedia.org/wiki/Fibonacci_number</a>]</p>
+					<p>The task of this problem is straightforward: Implement a Fibonacci number-­‐generator program. It
+						should simply print the first 90 numbers of the Fibonacci number sequence, as follows:</p>
+					<pre><code>The next number is 0
+The next number is 1
+The next number is 1
+…
+</code></pre>
+					<p>You will need to use a special control statement, which is a for-­‐loop. It has the syntax</p>
+					<pre><code>for( int i = 0; i < someNumber; i++ )
+  { statements …
+}
+</code></pre>
+					<p>"<b>i</b>" is a variable used as a loop index, and the compound expression in parentheses right
+						after the keyword "<b>for</b>" contains three expression statements. The first one initializes
+						(and possibly even declares) the loop index variable. The second expression is used as a
+						condition to decide whether or not more loops need to be executed (the condition will be checked
+						at the beginning of every loop, including the very first one). The third expression will be
+						evaluated at the end of each loop and is used to update the loop index variable. Note that the
+						loop index variable may of course be used in the compound statement following the for-­‐ loop
+						header.</p>
+					<p>In order to print custom numbers to the console, you may insert special format specifiers in the
+						string literal to be printed using <b>printf</b>. For example, if you want to print two integers
+						to the
+						console, you can use</p>
+					<pre><code>printf("%d %d\n", var1, var2);</code></pre>
+					<p>%d here are special format specifiers that will be replaced sequentially by the values passed
+						starting from the second parameter to the <b>printf</b> function. Every format specifier is of
+						the form %x, where x is replaced according to the actual format of the data. Examples:</p>
+					<pre><code>c: character 
+s: string
+d: integer (int)
+u: unsigned integer
+f: floating point(float)
+ld: integer (long)
+…
+</code></pre>
+					<p>"\n" is the EOL (End Of Line) character and will cause a line break in the console. Ask yourself
+						how big the number becomes, and what bit-­‐width is required!? The required output can be
+						downloaded from the webpage.</p>
+					<p>Please follow the instructions on the webpage to login to our online grading system and submit
+						your solution there. Please follow the exact instructions on how to register such that we are
+						able to unambiguously identify you. This is very important as the summer-­‐ homeworks will be
+						graded and already make up for a small part of your overall grade.Please follow the instructions
+						on the webpage to login to our online grading system and submit your solution there. Please
+						follow the exact instructions on how to register such that we are able to unambiguously identify
+						you. This is very important as the summer-­‐ homeworks will be graded and already make up for a
+						small part of your overall grade.</p>
+					</div>
+						<!-- Form -->
+						<fieldset class="layui-elem-field layui-field-title">
+							<legend>在线测试 （语言：C；时间限制：1s）</legend>
+						</fieldset>
+							<div class="row gtr-uniform">
+								
+								<!-- Break -->
+								<div class="col-12">
+									<div class="codearea">
+										<textarea name="textarea" id="textareaCode" rows="6"></textarea>
+										<table class="layui-hide" id="testcaseList" lay-filter="testcaseList"></table>
+									</div>
+								</div>
+								<!-- Break -->
+								<div class="col-12">
+									<ul class="actions">
+										<li><input type="submit" value="提交代码" class="primary" id="submitBTN" /></li>
+										<li><button id="addTestcase">添加自定义测试用例</button></li>
+									</ul>
+								</div>
+								<!-- Break -->
+								<div class="col-12">
+									<div class="layui-progress" lay-filter="curProgress">
+										<div class="layui-progress-bar layui-bg-red" lay-percent="100%"><span id="progressBar" class="layui-progress-text"></span></div>
+									</div>
+								</div>
+								<!-- Break -->
+								<div class="col-12">
+									<fieldset class="layui-elem-field">
+										<legend>当前状态</legend>
+										<div id="curStatus" class="layui-field-box">
+											<h3 style = "text-align:center">无提交记录</h3>
+										</div>
+									</fieldset>
+									<table class="layui-hide" id="testResult"></table>
+								</div>
+							</div>
+						
+					</div>
+				</div>
+			</section>
+		
+		<!-- Contact & Donate -->
+			<section id="cta" class="wrapper">
+				<div class="inner">
+					<header class="special">
+						<h2>有话想说？</h2>
+						<ul class="actions special">
+							<a href="https://www.diaochapai.com/survey3000919" target="_blank" class="button primary">联系我们</a>
+						</ul>
+					</header>
+				</div>
+			</section>
+		
+
+		<!-- Footer -->
+		<footer id="footer">
+			<div class="inner">
+				<div class="content">
+					<section>
+						<h3>关于社区</h3>
+						<p>测试用例社区（Testcase Community）是希望为学习信息方向相关课程的同学提供便利的社区。
+							在编写程序的过程中，最让人头疼的其实是一些边界、极端的测试用例，以及程序中不起眼的BUG。我希望通过这个社区，可以让所有学习者分享、
+							贡献测试用例，并且方便地进行测试，借此减少DEBUG的时间，提高学习效率，减少抄袭的发生。
+						</p>
+					</section>
+					<section>
+						<h4>快速访问</h4>
+						<ul class="alt">
+							<li><a href="http://www.shanghaitech.edu.cn/" target="_blank">上海科技大学</a></li>
+						</ul>
+					</section>
+					<section>
+						<h4>联系方式</h4>
+						<ul class="plain">
+							<li><a href="mailto:wuhy1@shanghaitech.edu.cn"><i
+										class="icon fa-envelope-o">&nbsp;</i>E-mail</a></li>
+							<li><a href="https://github.com/testcasecommunity" target="_blank"><i
+										class="icon fa-github">&nbsp;</i>Github</a></li>
+						</ul>
+					</section>
+				</div>
+				<div class="copyright">
+					&copy; 2019 Testcase Community. Website support <a href="https://templated.co/"
+						target="_blank">Templated</a>.
+					Picture from <a href="http://www.shanghaitech.edu.cn/mlxy/list.htm" target="_blank">ShanghaiTech</a>.
+					Server support <a href="http://www.dooccn.com/c/" target="_blank">Dooccn</a> <a href="http://github.com/" target="_blank">Github</a>. All rights reserved.
+				</div>
+			</div>
+		</footer>
+
+		<!-- Scripts -->
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+
+		<script src="assets/js/codemirrormain.js"></script>
+		<script src="assets/js/codemirrorconfig.js"></script>
+
+		<script src="assets/layui/layui.js" charset="utf-8"></script>
+		<script src="assets/layui/form.js"></script>
+
+		<script src="https://www.w3xue.com/tools/support/base64.min.js"></script>
+		<script type="text/javascript" src="https://unpkg.zhimg.com/github-api/dist/GitHub.bundle.min.js"></script>
+
+		<script src="assets/js/test.min.js"></script>
+
+		<script type="text/html" id="statusTpl">
+			{{#  if(d.status === 'Accept'){ }}
+				<span style="color: #449D54; font-weight:bold;">测试通过 Accept</span>
+			{{#  } else if(d.status === 'Compile Error'){ }}
+				<span style="color: #e8a60b; font-weight:bold;">编译错误 Compile Error</span>
+			{{#  } else if(d.status === 'Runtime Error'){ }}
+				<span style="color: #D04051; font-weight:bold;">运行错误 Runtime Error</span>
+			{{#  } else if(d.status === 'Time Limit Exceeded'){ }}
+				<span style="color: #D04051; font-weight:bold;">超出时间 Time Limit Exceeded</span>
+			{{#  } else if(d.status === 'Wrong Answer'){ }}
+				<span style="color: #D04051; font-weight:bold;">答案错误 Wrong Answer</span>
+			{{#  } else if(d.status === 'Pre-Test Error'){ }}
+				<span style="color: #AA38F5; font-weight:bold;">预检错误 Pre-Test Error</span>
+			{{#  } }}
+		</script>
+
+		<script type="text/html" id="detailTpl">
+			<a href="javascript:active['offset'].call('#detailButton', $('#detailButton'), {{d.detail}});" class="icon fa-search" id="detailButton"><span class="label">详情</span></a>
+		</script>
+
+		<script type="text/html" id="operate">
+			{{#  var github_name = localStorage.getItem('github_name'); }}
+			{{#  if (d.author == null) { }}
+				<a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="upload">上传</a>
+			{{#  } else if (github_name != null && github_name == d.author) { }}
+				<a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
+				<a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+			{{#  } else if (github_name != null && github_name != d.author) { }}
+				<a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="plus">赞:{{ d.up }}</a>
+				<a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="minus">踩:{{ d.down }}</a>
+			{{#  } else if (github_name == null) { }}
+				<a class="layui-btn layui-btn-disabled layui-btn-xs">赞:{{ d.up }}</a>
+				<a class="layui-btn layui-btn-disabled layui-btn-xs">踩:{{ d.down }}</a>
+			{{#  } }}
+		</script>
+
+		<script type="text/html" id="statusInfo">
+			{{#  if(d.status === 'processing'){ }}
+				<div style = "text-align:center;">
+					<i class="layui-icon layui-icon-loading-1 layui-anim layui-anim-rotate layui-anim-loop" style="font-size: 30px;"></i>
+				</div>
+				<h3 style = "text-align:center;">{{ d.content }}</h3>
+			{{#  } else if(d.status === 'error'){ }}
+				<h3 style = "text-align:center;">运行失败！</h3>
+				<h3 style = "text-align:center;"><span style="color: #D04051;">{{ d.content }}</span></h3>
+				<h3 style = "text-align:center;">请稍后重试。</h3>
+			{{#  } else if(d.status === 'finished'){ }}
+			{{#  if (d.content.pe != 0) { }}
+				<h3 style = "text-align:center;">运行失败！</h3>
+				<h3 style = "text-align:center;"><span style="color: #AA38F5;">预检错误 Pre-Test Error</span></h3>
+			{{#  } else if(d.content.ce != 0){ }}
+				<h3 style = "text-align:center;">运行失败！</h3>
+				<h3 style = "text-align:center;"><span style="color: #e8a60b;">编译错误 Compile Error</span></h3>
+			{{#  } else { }}
+				<h3 style = "text-align:center;">运行成功！</h3>
+			{{#  if (d.content.re != 0) { }}
+				<h3 style = "text-align:center;"><span style="color: #D04051;">运行错误 Runtime Error</span></h3>
+				<h3 style = "text-align:center; line-height: 1;">{{ d.content.re }}个</h3>
+			{{#  } if (d.content.tle != 0) { }}
+				<h3 style = "text-align:center;"><span style="color: #D04051;">超出时间 Time Limit Exceeded</span></h3>
+				<h3 style = "text-align:center; line-height: 1;">{{ d.content.tle }}个</h3>
+			{{#  } if (d.content.wa != 0) { }}
+				<h3 style = "text-align:center;"><span style="color: #D04051;">答案错误 Wrong Answer</span></h3>
+				<h3 style = "text-align:center; line-height: 1;">{{ d.content.wa }}个</h3>
+			{{#  } if (d.content.ac != 0) { }}
+				<h3 style = "text-align:center;"><span style="color: #449D54;">测试通过 Accept</span></h3>
+				<h3 style = "text-align:center; line-height: 1;">{{ d.content.ac }}个</h3>
+			{{#  };};} }}
+		</script>
+
+		<script>
+			var compileInput = "";
+			var runcode = 7; // C
+			var initCode = "#include <stdio.h>\n\nint main(void) { \n    // Warning: 'int main' is unchangeable! \n    // Otherwise it will cause Pre-Test Error.\n\n    // YOUR CODE HERE.\n    return 0;\n}";
+			editor.setValue(initCode);
+			var timeLimit = 1;
+			var orgName = 'testcasecommunity';
+			var repoName = 'CS100';
+			var issueID = 2;
+		</script>
+
+	</body>
+</html>
