@@ -24,6 +24,10 @@
 				border-color: #ce1b28;
 				box-shadow: 0 0 0 3px #ce1b28; 
 			}
+			.CodeMirror {
+				border: 1px solid #eee;
+				height: auto;
+			}
 		</style>
 		
 		<script>
@@ -348,13 +352,18 @@
 		<script>
 			var compileInput = "";
 			var runcode = 7; // C
-			var initCode = "#include <stdio.h>\n\nint main(void) { \n    // Warning: 'int main' is unchangeable! \n    // Otherwise it will cause Pre-Test Error.\n\n    // YOUR CODE HERE.\n    return 0;\n}";
-			editor.setValue(initCode);
+			var initCode = "#include <stdio.h>\n\nint main(void) { \n    // Warning: 'int main' is unchangeable! \n    // Otherwise it will cause Pre-Test Error.\n\n    // YOUR CODE HERE.\n    return 0;\n}\n\n\n";
 			var timeLimit = 1;
 			var stdList = ['1001'];
 			var orgName = 'testcasecommunity';
 			var repoName = 'CS100';
 			var issueID = 1;
+
+			if (localStorage.getItem(repoName + issueID)) {
+				editor.setValue(localStorage.getItem(repoName + issueID));
+			} else {
+				editor.setValue(initCode);
+			}
 		</script>
 
 	</body>

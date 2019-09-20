@@ -7,7 +7,7 @@
 <html>
 
 <head>
-	<title>Lesson 5 Angle between the hour and the minute hand of a clock</title>
+	<title>Whether you have a bad mood in a day?</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 	<meta name="description" content="" />
@@ -26,6 +26,7 @@
 			border-color: #ce1b28;
 			box-shadow: 0 0 0 3px #ce1b28;
 		}
+
 		.CodeMirror {
 			border: 1px solid #eee;
 			height: auto;
@@ -60,21 +61,17 @@
 		<ul class="links">
 			<li><a href="https://testcasecommunity.github.io/">主页</a></li>
 			<li><a href="index.html">CS100 Introduction to Programming</a></li>
-			<li><a href="19Lesson01.html">Lesson 01</a></li>
-			<li><a href="19Lesson02.html">Lesson 02</a></li>
-			<li><a href="19Lesson03.html">Lesson 03</a></li>
-			<li><a href="19Lesson04.html">Lesson 04</a></li>
-			<li><a href="19Lesson05.html">Lesson 05</a></li>
-			<li><a href="19Lesson06.html">Lesson 06</a></li>
+			<li><a href="19hw1-1.html">Homework 1-1</a></li>
+			<li><a href="19hw1-2.html">Homework 1-2</a></li>
+			<li><a href="19hw1-3.html">Homework 1-3</a></li>
 		</ul>
 	</nav>
 
 	<!-- Heading -->
 	<section id="heading">
 		<div class="inner">
-			<h1>Lesson 5 (Exercise 3)</h1>
-			<h1 style="font-size: 30px">Angle between the hour and the minute hand of a clock</h1>
-			<h3>From CS100 Summer Homework</h3>
+			<h1>Whether you have a bad mood in a day?</h1>
+			<h2>From CS100 Homework 1-3</h2>
 		</div>
 	</section>
 
@@ -84,53 +81,110 @@
 			<div class="content">
 
 				<fieldset class="layui-elem-field layui-field-title">
-					<legend>文档内容</legend>
+					<legend>题目描述</legend>
 				</fieldset>
 				<div
 					style="padding-left: 100px; padding-right: 100px; font-size: 18px; font-family: Calibri, sans-serif;">
-					<p>Older mechanical clocks do not only move the second or minute hands continuously at every second,
-						but even the hour hand. The task of this exercise is straightforward. Given a time (in 24-­‐hour
-						format and with minute precision, as in 00:12, 13:04, etc.), write a C program that calculates
-						the angle between the hour and the minute hand (in degrees).<br>
-						Examples input/output sessions with the program are given as follows:
+					<p>As you have all experienced, before your first semester starts, there are many lectures (like
+						school introduction, fire safety and such) for new students, and they are MANDATORY.</p>
+					<p>Of course, the contents of those lectures are very beneficial to new students, but there are
+						always some who don’t like the lectures, and here begins our story of Gezi Wang, a lazy
+						freshman.</p>
+					<p>Gezi Wang’s day begins when he wakes up at<code>8:00</code>with mood level<code>100</code>. 100
+						is also the maximum limit of his mood level.</p>
+					<p>During his day, several lectures will take place. Gezi Wang has to attend these lectures, but his
+						mood level will drop.
 					</p>
-					<pre><code>What time is it? <span style="color: #ce1b28">10:10</span>
-The angle between the hands is 115.0 degrees.
-
-What time is it? <span style="color: #ce1b28">21:45</span>
-The angle between the hands is 22.5 degrees.
-</code></pre>
-					<p>The red text represents the user input. Further notes on correctness:</p>
-					<ul>
-						<li><span class="layui-badge-dot layui-bg-black"></span>
-							The angle refers to the one that is less than 180 degrees in absolute terms (and should be
-							reported without sign).
-						</li>
-						<li><span class="layui-badge-dot layui-bg-black"></span>
-							Knowing that the time is in 24-­‐hour format, you may have to deal with the hours upfront.
-						</li>
-						<li><span class="layui-badge-dot layui-bg-black"></span>
-							Please format the output with one decimal digit.
-						</li>
-					</ul>
-					<p>It may be useful to familiarize yourself with the math library and some of its functions. Add
-						<code>#include &lt;math.h&gt;</code> to the top of your program to include the math functions,
-						and—
-						depending on your system and compiler—you may also have to add the option –lm to your compiler
-						command to activate the math functions. Some useful commands are:
+					<p><b>For the first 60 minutes of a lecture, his mood level drops by<code>0.4/minute</code>.</b></p>
+					<p><b>After 60 minutes, his mood level drops by<code>0.8/minute</code>.</b></p>
+					<p>If his mood drops to or below 0, we will assume he has to be sent to the hospital.</p>
+					<p>When Gezi Wang does not have a lecture, he immediately returns to his dorm and sleeps.</p>
+					<p><b>His mood recovers by<code>0.5/minute</code>in this situation.</b></p>
+					<p><u>His mood level will not exceed the maximum limit 100.</u></p>
+					<p>His day ends at<code>22:00</code>. Your goal is to find out his mood level at the end of the day.
 					</p>
-					<pre><code>int remainder = var1 % var2;	//Takes var1 modulo var2,
-				//i.e. the remainder of
-				//the division of var1 by var2
-fabs(var1);			//Takes the absolute value of
-			    	//a floating point variable
-</code></pre>
-					<p>Again, consider the input/output examples on the webpage to check the correctness of your code,
-						and follow the instructions on the webpage to login to our online grading system and submit your
-						solution there. Please follow the exact instructions on how to register such that we are able to
-						unambiguously identify you. This is very important as the summer-­‐ homeworks will be graded and
-						already make up for a small part of your overall grade.</p>
+					<p>The following is a demo process of the program: (red indicates input)</p>
+					<div style="text-align: center"><img width="900" height="312.31" alt="image"
+							src="images/hw1-3.png" />
+					</div>
 				</div>
+
+				<fieldset class="layui-elem-field layui-field-title">
+					<legend>问题输入</legend>
+				</fieldset>
+				<div
+					style="padding-left: 100px; padding-right: 100px; font-size: 18px; font-family: Calibri, sans-serif;">
+					<p>You will receive<code>an integer</code>in the first line, indicating the number of lectures
+						today.</p>
+					<p>In each of the following line, you will receivetwo <code>24-hour times</code>, separated by a
+						hyphen (-). (<b><u>Sample: 11:00-13:00</u></b>) This indicates when a lecture starts and ends.
+					</p>
+					<p>It’s guaranteed that the inputs are as valid as you can imagine, specifically that:</p>
+					<p>1.There is no lecture before 8:00 and after 22:00.
+						<br>2.The lectures will be given in time order. In other words, after a line of “14:00-14:30”,
+						you won’t receive a time period such as “9:00-10:00”.
+						<br>3.The end time of a lecture is always later than the beginning time.
+						<br>4.No lectures overlap, and there are always breaks between lectures. (And no matter how
+						short a break is, he sleeps!)</p>
+					<p>Note that it is not certain how many lectures there are, so we recommend not using an array.</p>
+				</div>
+
+				<fieldset class="layui-elem-field layui-field-title">
+					<legend>问题输出</legend>
+				</fieldset>
+				<div
+					style="padding-left: 100px; padding-right: 100px; font-size: 18px; font-family: Calibri, sans-serif;">
+					<p>Your output will be one line at the beginning and one line in the end.</p>
+					<p>At the beginning, you should write:</p>
+					<p><code>How many lectures today?</code>, followed by a new line(\n).</p>
+					<p>After all inputs, you must give your output in the following format:</p>
+					<p>If Gezi Wang is not sent to hospital during his day, you should write: </p>
+					<p><code>His mood level is *** at the end of the day.</code></p>
+					<p><b><u>* The mood level should be printed with “printf” to display only 1 decimal point digit,
+								even if it is an integer.</u></b></p>
+					<p>Otherwise, you should write:</p>
+					<p><code>Gezi Wang has been sent to hospital.</code></p>
+				</div>
+
+				<div class="layui-row layui-col-space30">
+					<div class="layui-col-xs6">
+						<fieldset class="layui-elem-field layui-field-title">
+							<legend>样例输入1</legend>
+						</fieldset>
+						<pre><code>3
+9:00-11:00
+15:00-17:00
+17:30-18:50</code></pre>
+					</div>
+					<div class="layui-col-xs6">
+						<fieldset class="layui-elem-field layui-field-title">
+							<legend>样例输出1</legend>
+						</fieldset>
+						<pre><code>How many lectures today?
+His mood level is 98.0 at the end of the day.
+
+
+</code></pre>
+					</div>
+				</div>
+
+				<div class="layui-row layui-col-space30">
+						<div class="layui-col-xs6">
+							<fieldset class="layui-elem-field layui-field-title">
+								<legend>样例输入2</legend>
+							</fieldset>
+							<pre><code>1
+8:01-21:59</code></pre>
+						</div>
+						<div class="layui-col-xs6">
+							<fieldset class="layui-elem-field layui-field-title">
+								<legend>样例输出2</legend>
+							</fieldset>
+							<pre><code>How many lectures today?
+Gezi Wang has been sent to hospital.</code></pre>
+						</div>
+					</div>
+
 				<!-- Form -->
 				<fieldset class="layui-elem-field layui-field-title">
 					<legend>在线测试 （语言：C；时间限制：1s）</legend>
@@ -313,15 +367,15 @@ fabs(var1);			//Takes the absolute value of
 		</script>
 
 	<script>
-		var compileInput = "";
+		var compileInput = "0.0 1.0\n-1.0 0.0\n1.0 0.0";
 		var runcode = 7; // C
-		var initCode = "#include <stdio.h>\n\nint main(void) { \n    // Warning: 'int main' is unchangeable! \n    // Otherwise it will cause Pre-Test Error.\n\n    // YOUR CODE HERE.\n    return 0;\n}\n\n\n";
+		var initCode = "#include <stdio.h>\n\n/**\n * The following lines are for Visual Studio users.\n * YOU SHOULD NOT MODIFY IT\n */\n#ifdef _MSC_VER\n#define _CRT_SECURE_NO_WARNINGS 1\n#endif \n\nint main()\n{\n    /* number of lectures */\n    int num_lectures;\n    /* Initialize mood of Gezi Wang */\n    float mood = 100.0;\n    /* You may also need other variables. */\n\n\n\n    \n    /**\n     * TODO: \n     * (1) Get the inputs \n     * (2) Calculate mood drops and recovers\n     */\n    \n \n    \n    /* TODO: print the result */\n \n    return 0;\n}\n";
 		var timeLimit = 1;
-		var stdList = ['1001', '1002', '1003', '1004', '1005', '1006', '1007', '1008', '1009', '1010'];
+		var stdList = ['1001', '1002'];
 		var orgName = 'testcasecommunity';
 		var repoName = 'CS100';
-		var issueID = 4;
-		
+		var issueID = 8;
+
 		if (localStorage.getItem(repoName + issueID)) {
 			editor.setValue(localStorage.getItem(repoName + issueID));
 		} else {

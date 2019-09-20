@@ -7,7 +7,7 @@
 <html>
 
 <head>
-	<title>Lesson 5 Angle between the hour and the minute hand of a clock</title>
+	<title>Calculating the geometric center of a 2D triangle</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 	<meta name="description" content="" />
@@ -26,6 +26,7 @@
 			border-color: #ce1b28;
 			box-shadow: 0 0 0 3px #ce1b28;
 		}
+
 		.CodeMirror {
 			border: 1px solid #eee;
 			height: auto;
@@ -60,21 +61,17 @@
 		<ul class="links">
 			<li><a href="https://testcasecommunity.github.io/">主页</a></li>
 			<li><a href="index.html">CS100 Introduction to Programming</a></li>
-			<li><a href="19Lesson01.html">Lesson 01</a></li>
-			<li><a href="19Lesson02.html">Lesson 02</a></li>
-			<li><a href="19Lesson03.html">Lesson 03</a></li>
-			<li><a href="19Lesson04.html">Lesson 04</a></li>
-			<li><a href="19Lesson05.html">Lesson 05</a></li>
-			<li><a href="19Lesson06.html">Lesson 06</a></li>
+			<li><a href="19hw1-1.html">Homework 1-1</a></li>
+			<li><a href="19hw1-2.html">Homework 1-2</a></li>
+			<li><a href="19hw1-3.html">Homework 1-3</a></li>
 		</ul>
 	</nav>
 
 	<!-- Heading -->
 	<section id="heading">
 		<div class="inner">
-			<h1>Lesson 5 (Exercise 3)</h1>
-			<h1 style="font-size: 30px">Angle between the hour and the minute hand of a clock</h1>
-			<h3>From CS100 Summer Homework</h3>
+			<h1>Calculating the geometric center of a 2D triangle</h1>
+			<h2>From CS100 Homework 1-2</h2>
 		</div>
 	</section>
 
@@ -84,53 +81,94 @@
 			<div class="content">
 
 				<fieldset class="layui-elem-field layui-field-title">
-					<legend>文档内容</legend>
+					<legend>题目描述</legend>
 				</fieldset>
 				<div
 					style="padding-left: 100px; padding-right: 100px; font-size: 18px; font-family: Calibri, sans-serif;">
-					<p>Older mechanical clocks do not only move the second or minute hands continuously at every second,
-						but even the hour hand. The task of this exercise is straightforward. Given a time (in 24-­‐hour
-						format and with minute precision, as in 00:12, 13:04, etc.), write a C program that calculates
-						the angle between the hour and the minute hand (in degrees).<br>
-						Examples input/output sessions with the program are given as follows:
+					<p>In this problem, you are required to write a C program in order to calculate the geometric center
+						of any given 2D triangle, see the following figure:</p>
+					<div style="text-align: center"><img width="501" height="349" alt="image" src="images/hw1-2.png" />
+					</div>
+					<p>Note that we do not require you to draw such an image; only necessary parameters for the
+						geometric center are required to be output. Thus, you will input three 2D vertex
+						coordinates, and then output the geometric center of this triangle as well as the maximum
+						and minimum distance from this geometric center to the 3 given vertices.
 					</p>
-					<pre><code>What time is it? <span style="color: #ce1b28">10:10</span>
-The angle between the hands is 115.0 degrees.
-
-What time is it? <span style="color: #ce1b28">21:45</span>
-The angle between the hands is 22.5 degrees.
-</code></pre>
-					<p>The red text represents the user input. Further notes on correctness:</p>
-					<ul>
-						<li><span class="layui-badge-dot layui-bg-black"></span>
-							The angle refers to the one that is less than 180 degrees in absolute terms (and should be
-							reported without sign).
-						</li>
-						<li><span class="layui-badge-dot layui-bg-black"></span>
-							Knowing that the time is in 24-­‐hour format, you may have to deal with the hours upfront.
-						</li>
-						<li><span class="layui-badge-dot layui-bg-black"></span>
-							Please format the output with one decimal digit.
-						</li>
-					</ul>
-					<p>It may be useful to familiarize yourself with the math library and some of its functions. Add
-						<code>#include &lt;math.h&gt;</code> to the top of your program to include the math functions,
-						and—
-						depending on your system and compiler—you may also have to add the option –lm to your compiler
-						command to activate the math functions. Some useful commands are:
+					<p>
+						Note that there are multiple methods to compute the center coordinates. The simplest method is,
 					</p>
-					<pre><code>int remainder = var1 % var2;	//Takes var1 modulo var2,
-				//i.e. the remainder of
-				//the division of var1 by var2
-fabs(var1);			//Takes the absolute value of
-			    	//a floating point variable
-</code></pre>
-					<p>Again, consider the input/output examples on the webpage to check the correctness of your code,
-						and follow the instructions on the webpage to login to our online grading system and submit your
-						solution there. Please follow the exact instructions on how to register such that we are able to
-						unambiguously identify you. This is very important as the summer-­‐ homeworks will be graded and
-						already make up for a small part of your overall grade.</p>
+					<div style="text-align: center"><img width="350" height="164.48" alt="image"
+							src="images/hw1-2-1.png" />
+					</div>
+					<p>where<code>x1, x2, x3</code>are x coordinates of three inputs;<code>y1, y2, y3</code>are y
+						coordinates of three inputs;
+					</p>
+					<p>
+						And the distance between two points can be calculated as</p>
+					<div style="text-align: center"><img width="350" height="48.35" alt="image"
+							src="images/hw1-2-2.png" />
+					</div>
+					<p>The following is a demo process for the program if you can do it successfully: (red indicates
+						input)</p>
+					<div style="text-align: center"><img width="900" height="330" alt="image"
+							src="images/hw1-2-3.png" />
+					</div>
 				</div>
+
+				<fieldset class="layui-elem-field layui-field-title">
+					<legend>问题输入</legend>
+				</fieldset>
+				<div
+					style="padding-left: 100px; padding-right: 100px; font-size: 18px; font-family: Calibri, sans-serif;">
+					<p>The input contains<code>3 lines</code>, for each line, it
+						contains<code>two floating point numbers</code>, indicating
+						the<code>x coordinate</code>and<code>y coordinate</code>for a vertex in the triangle.</p>
+					<p><b>* Note that we assume all inputs are valid! (It means you do not need to consider the illegal
+							cases)</b></p>
+				</div>
+
+				<fieldset class="layui-elem-field layui-field-title">
+					<legend>问题输出</legend>
+				</fieldset>
+				<div
+					style="padding-left: 100px; padding-right: 100px; font-size: 18px; font-family: Calibri, sans-serif;">
+					<p>1. output a prompt<code>"Input vertex 1: "</code>, then, receive two inputs.</p>
+					<p>2. output a prompt<code>"Input vertex 2: "</code>, then, receive two inputs.</p>
+					<p>3. output a prompt<code>"Input vertex 3: "</code>, then, receive two inputs.</p>
+					<p>4. output a prompt<code>"The center of the triangle is: "</code>, and followed by the values
+						of<code>center_x</code>and<code>center_y</code></p>
+					<p>5. output a prompt<code>"The maximum distance between center and vertices: "</code>, and then the
+						maximum distance between the center and the vertices.</p>
+					<p>6. output a prompt<code>"The minimum distance between center and vertices: "</code>, and then the
+						minimum distance between the center and vertices.</p>
+					<p><b><u>* Center coordinates should be printed with “printf” to display only 1 decimal point digit,
+								and distances should be printed with “printf” to display only 2 decimal point
+								digit.</u></b></p>
+					<p><b><u>* The values of coordinates are between -10000.0 and 10000.0.</u></b></p>
+					<p><u>* (The quotation marks are not to be printed.)</u></p>
+				</div>
+
+				<div class="layui-row layui-col-space30">
+					<div class="layui-col-xs6">
+						<fieldset class="layui-elem-field layui-field-title">
+							<legend>样例输入1</legend>
+						</fieldset>
+						<pre><code>0.0 1.0
+-1.0 0.0
+1.0 0.0
+
+</code></pre>
+					</div>
+					<div class="layui-col-xs6">
+						<fieldset class="layui-elem-field layui-field-title">
+							<legend>样例输出1</legend>
+						</fieldset>
+						<pre><code>Input vertex 1: Input vertex 2: Input vertex 3: The center of the triangle is: 0.0 0.3
+The maximum distance between center and vertices: 1.05
+The minimum distance between center and vertices: 0.67</code></pre>
+					</div>
+				</div>
+
 				<!-- Form -->
 				<fieldset class="layui-elem-field layui-field-title">
 					<legend>在线测试 （语言：C；时间限制：1s）</legend>
@@ -313,15 +351,15 @@ fabs(var1);			//Takes the absolute value of
 		</script>
 
 	<script>
-		var compileInput = "";
+		var compileInput = "0.0 1.0\n-1.0 0.0\n1.0 0.0";
 		var runcode = 7; // C
-		var initCode = "#include <stdio.h>\n\nint main(void) { \n    // Warning: 'int main' is unchangeable! \n    // Otherwise it will cause Pre-Test Error.\n\n    // YOUR CODE HERE.\n    return 0;\n}\n\n\n";
+		var initCode = "#include <stdio.h>\n#include <math.h>\n\n/**\n * The following lines are for Visual Studio users.\n * YOU SHOULD NOT MODIFY IT\n */\n#ifdef _MSC_VER\n#define _CRT_SECURE_NO_WARNINGS 1\n#endif \n\nint main()\n{\n  /**\n   * x1: x coordinate of vertex 1.\n   * y1: y coordinate of vertex 1.\n   * You may also need other variables.\n   */\n  float x1, y1;\n  /**\n   * center_x: the x coordinate of the center.\n   * center_y: the y coordinate of the center.\n   * You may also need other variables.\n   */\n  float center_x, center_y;\n  /**\n   * TODO: \n   * (1) get the input\n   * (2) calculate the coordinate of the center.\n   * (3) calculate the distance\n   */\n\n\n\n\n\n  // TODO: print all the outputs.\n\n  return 0;\n}\n";
 		var timeLimit = 1;
-		var stdList = ['1001', '1002', '1003', '1004', '1005', '1006', '1007', '1008', '1009', '1010'];
+		var stdList = ['1001'];
 		var orgName = 'testcasecommunity';
 		var repoName = 'CS100';
-		var issueID = 4;
-		
+		var issueID = 7;
+
 		if (localStorage.getItem(repoName + issueID)) {
 			editor.setValue(localStorage.getItem(repoName + issueID));
 		} else {

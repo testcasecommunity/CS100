@@ -7,7 +7,7 @@
 <html>
 
 <head>
-	<title>Lesson 5 Angle between the hour and the minute hand of a clock</title>
+	<title>Searching maximal and minimal numbers</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 	<meta name="description" content="" />
@@ -26,6 +26,7 @@
 			border-color: #ce1b28;
 			box-shadow: 0 0 0 3px #ce1b28;
 		}
+
 		.CodeMirror {
 			border: 1px solid #eee;
 			height: auto;
@@ -60,21 +61,17 @@
 		<ul class="links">
 			<li><a href="https://testcasecommunity.github.io/">主页</a></li>
 			<li><a href="index.html">CS100 Introduction to Programming</a></li>
-			<li><a href="19Lesson01.html">Lesson 01</a></li>
-			<li><a href="19Lesson02.html">Lesson 02</a></li>
-			<li><a href="19Lesson03.html">Lesson 03</a></li>
-			<li><a href="19Lesson04.html">Lesson 04</a></li>
-			<li><a href="19Lesson05.html">Lesson 05</a></li>
-			<li><a href="19Lesson06.html">Lesson 06</a></li>
+			<li><a href="19hw1-1.html">Homework 1-1</a></li>
+			<li><a href="19hw1-2.html">Homework 1-2</a></li>
+			<li><a href="19hw1-3.html">Homework 1-3</a></li>
 		</ul>
 	</nav>
 
 	<!-- Heading -->
 	<section id="heading">
 		<div class="inner">
-			<h1>Lesson 5 (Exercise 3)</h1>
-			<h1 style="font-size: 30px">Angle between the hour and the minute hand of a clock</h1>
-			<h3>From CS100 Summer Homework</h3>
+			<h1>Searching maximal and minimal numbers</h1>
+			<h2>From CS100 Homework 1-1</h2>
 		</div>
 	</section>
 
@@ -84,93 +81,122 @@
 			<div class="content">
 
 				<fieldset class="layui-elem-field layui-field-title">
-					<legend>文档内容</legend>
+					<legend>题目描述</legend>
 				</fieldset>
 				<div
 					style="padding-left: 100px; padding-right: 100px; font-size: 18px; font-family: Calibri, sans-serif;">
-					<p>Older mechanical clocks do not only move the second or minute hands continuously at every second,
-						but even the hour hand. The task of this exercise is straightforward. Given a time (in 24-­‐hour
-						format and with minute precision, as in 00:12, 13:04, etc.), write a C program that calculates
-						the angle between the hour and the minute hand (in degrees).<br>
-						Examples input/output sessions with the program are given as follows:
-					</p>
-					<pre><code>What time is it? <span style="color: #ce1b28">10:10</span>
-The angle between the hands is 115.0 degrees.
-
-What time is it? <span style="color: #ce1b28">21:45</span>
-The angle between the hands is 22.5 degrees.
-</code></pre>
-					<p>The red text represents the user input. Further notes on correctness:</p>
-					<ul>
-						<li><span class="layui-badge-dot layui-bg-black"></span>
-							The angle refers to the one that is less than 180 degrees in absolute terms (and should be
-							reported without sign).
-						</li>
-						<li><span class="layui-badge-dot layui-bg-black"></span>
-							Knowing that the time is in 24-­‐hour format, you may have to deal with the hours upfront.
-						</li>
-						<li><span class="layui-badge-dot layui-bg-black"></span>
-							Please format the output with one decimal digit.
-						</li>
-					</ul>
-					<p>It may be useful to familiarize yourself with the math library and some of its functions. Add
-						<code>#include &lt;math.h&gt;</code> to the top of your program to include the math functions,
-						and—
-						depending on your system and compiler—you may also have to add the option –lm to your compiler
-						command to activate the math functions. Some useful commands are:
-					</p>
-					<pre><code>int remainder = var1 % var2;	//Takes var1 modulo var2,
-				//i.e. the remainder of
-				//the division of var1 by var2
-fabs(var1);			//Takes the absolute value of
-			    	//a floating point variable
-</code></pre>
-					<p>Again, consider the input/output examples on the webpage to check the correctness of your code,
-						and follow the instructions on the webpage to login to our online grading system and submit your
-						solution there. Please follow the exact instructions on how to register such that we are able to
-						unambiguously identify you. This is very important as the summer-­‐ homeworks will be graded and
-						already make up for a small part of your overall grade.</p>
+					<p>In this problem, you are required to write a C program to search for maximal and minimal values
+						in a series of floating-point data. Here you would like to input <b>n</b> values. You can update
+						some
+						variables as you read in new values. Finally, you will output the minimal and maximal values of
+						all your inputs. The following is a demo process for the program if you can do it successfully:
+						(red indicates input)</p>
+					<div style="text-align: center"><img width="745" height="429" alt="image" src="images/hw1-1.png" />
+					</div>
 				</div>
-				<!-- Form -->
+
 				<fieldset class="layui-elem-field layui-field-title">
-					<legend>在线测试 （语言：C；时间限制：1s）</legend>
+					<legend>问题输入</legend>
 				</fieldset>
-				<div class="row gtr-uniform">
-
-					<!-- Break -->
-					<div class="col-12">
-						<div class="codearea">
-							<textarea name="textarea" id="textareaCode" rows="6"></textarea>
-							<table class="layui-hide" id="testcaseList" lay-filter="testcaseList"></table>
-						</div>
-					</div>
-					<!-- Break -->
-					<div class="col-12">
-						<ul class="actions">
-							<li><input type="submit" value="提交代码" class="primary" id="submitBTN" /></li>
-							<li><button id="addTestcase">添加自定义测试用例</button></li>
-						</ul>
-					</div>
-					<!-- Break -->
-					<div class="col-12">
-						<div class="layui-progress" lay-filter="curProgress">
-							<div class="layui-progress-bar layui-bg-red" lay-percent="100%"><span id="progressBar"
-									class="layui-progress-text"></span></div>
-						</div>
-					</div>
-					<!-- Break -->
-					<div class="col-12">
-						<fieldset class="layui-elem-field">
-							<legend>当前状态</legend>
-							<div id="curStatus" class="layui-field-box">
-								<h3 style="text-align:center">无提交记录</h3>
-							</div>
-						</fieldset>
-						<table class="layui-hide" id="testResult"></table>
-					</div>
+				<div
+					style="padding-left: 100px; padding-right: 100px; font-size: 18px; font-family: Calibri, sans-serif;">
+					<p>The first number is an integer <code>n</code> , which represent show many floating point numbers the user wants
+						to input. The following<code>n</code>inputs are<code>n floats with at most 1 decimal digit</code>, which are the n numbers
+						you want to calculate the<code>min</code>and<code>max</code>.
+					<br>
+						Note that it is not certain how many inputs there are, so we recommend not using an array.</p>
 				</div>
 
+				<fieldset class="layui-elem-field layui-field-title">
+					<legend>问题输出</legend>
+				</fieldset>
+				<div
+					style="padding-left: 100px; padding-right: 100px; font-size: 18px; font-family: Calibri, sans-serif;">
+					<p>First, your program should output a prompt<code>"Please type number of inputs: "</code>
+						<br>
+						Then, after the user input<code>n</code>and<code>n numbers</code>.
+						<br>
+						Your program should output two lines.
+						<br>
+						The first line is<code>"Max value: "</code>and the maximum value of the inputs followed.
+						<br>
+						The second line is<code>"Min value: "</code>, and the minimum value of the inputs followed.
+						<br>
+						<b><u>* All of your outputs should be printed with “printf” to only 1 decimal point digit floating point number, even if a number is an integer.</u></b>
+						<br>
+						<b><u>* The value of inputs are restricted to be between -10000.0 and 10000.0.</u></b>
+						<br>
+						<u>* (The quotation marks are not to be printed.)</u></p>
+				</div>
+
+				<div class="layui-row layui-col-space30">
+					<div class="layui-col-xs6">
+						<fieldset class="layui-elem-field layui-field-title">
+							<legend>样例输入1</legend>
+						</fieldset>
+						<pre><code>5
+3.2
+1.6
+7.8
+8.3
+5.1</code></pre>
+					</div>
+					<div class="layui-col-xs6">
+						<fieldset class="layui-elem-field layui-field-title">
+							<legend>样例输出1</legend>
+						</fieldset>
+						<pre><code>Please type number of inputs: Max value: 8.3
+Min value: 1.6
+
+
+
+
+</code></pre>
+					</div>
+				</div>
+				
+
+			
+			<!-- Form -->
+			<fieldset class="layui-elem-field layui-field-title">
+				<legend>在线测试 （语言：C；时间限制：1s）</legend>
+			</fieldset>
+			<div class="row gtr-uniform">
+
+				<!-- Break -->
+				<div class="col-12">
+					<div class="codearea">
+						<textarea name="textarea" id="textareaCode" rows="6"></textarea>
+						<table class="layui-hide" id="testcaseList" lay-filter="testcaseList"></table>
+					</div>
+				</div>
+				<!-- Break -->
+				<div class="col-12">
+					<ul class="actions">
+						<li><input type="submit" value="提交代码" class="primary" id="submitBTN" /></li>
+						<li><button id="addTestcase">添加自定义测试用例</button></li>
+					</ul>
+				</div>
+				<!-- Break -->
+				<div class="col-12">
+					<div class="layui-progress" lay-filter="curProgress">
+						<div class="layui-progress-bar layui-bg-red" lay-percent="100%"><span id="progressBar"
+								class="layui-progress-text"></span></div>
+					</div>
+				</div>
+				<!-- Break -->
+				<div class="col-12">
+					<fieldset class="layui-elem-field">
+						<legend>当前状态</legend>
+						<div id="curStatus" class="layui-field-box">
+							<h3 style="text-align:center">无提交记录</h3>
+						</div>
+					</fieldset>
+					<table class="layui-hide" id="testResult"></table>
+				</div>
 			</div>
+
+		</div>
 		</div>
 	</section>
 
@@ -313,15 +339,15 @@ fabs(var1);			//Takes the absolute value of
 		</script>
 
 	<script>
-		var compileInput = "";
+		var compileInput = "5\n3.2\n1.6\n7.8\n8.3\n5.1";
 		var runcode = 7; // C
-		var initCode = "#include <stdio.h>\n\nint main(void) { \n    // Warning: 'int main' is unchangeable! \n    // Otherwise it will cause Pre-Test Error.\n\n    // YOUR CODE HERE.\n    return 0;\n}\n\n\n";
+		var initCode = "#include <stdio.h>\n\n/**\n * The following lines are for Visual Studio users.\n * YOU SHOULD NOT MODIFY IT\n */\n#ifdef _MSC_VER\n#define _CRT_SECURE_NO_WARNINGS 1\n#endif \n\nint main()\n{\n  /**\n   * maximum: stores the maximum value of inputs.\n   * minimum: stores the minimum value of inputs.\n   * You may also need other variables.\n   */ \n  float maximum, minimum;\n  /* TODO: print the prompt and get the values of input */\n\n\n  /* TODO: get input numbers and cal the maximum and minimum */\n\n\n\n}\n\n";
 		var timeLimit = 1;
-		var stdList = ['1001', '1002', '1003', '1004', '1005', '1006', '1007', '1008', '1009', '1010'];
+		var stdList = ['1001'];
 		var orgName = 'testcasecommunity';
 		var repoName = 'CS100';
-		var issueID = 4;
-		
+		var issueID = 6;
+
 		if (localStorage.getItem(repoName + issueID)) {
 			editor.setValue(localStorage.getItem(repoName + issueID));
 		} else {
