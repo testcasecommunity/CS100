@@ -7,7 +7,7 @@
 <html>
 
 <head>
-	<title>Switch Practice</title>
+	<title>GCD Practice</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 	<meta name="description" content="" />
@@ -70,8 +70,8 @@
 	<!-- Heading -->
 	<section id="heading">
 		<div class="inner">
-			<h1>Switch Practice</h1>
-			<h2>From CS100 Recitation 1-1</h2>
+			<h1>GCD Practice</h1>
+			<h2>From CS100 Recitation 1-2</h2>
 		</div>
 	</section>
 
@@ -85,9 +85,7 @@
 				</fieldset>
 				<div
 					style="padding-left: 100px; padding-right: 100px; font-size: 18px; font-family: Calibri, sans-serif;">
-					<p>到期末时，老师会根据每位同学的综合成绩（Score）计算出每位同学的等级（Class）和绩点（GPA）。为了简化问题，
-						我们假设老师严格按照《上海科技大学课程考核及成绩管理办法（试行）(2019年9月修订）》为每位同学给出成绩。
-						给出小明同学的成绩，请你返回小明的等级和绩点。
+					<p>计算两个正整数的最大公约数。函数已经写好，只需要实现即可。可以使用逐个尝试的方法。
 					</p>
 					<div style="text-align: center"><img width="100%" height="100%" alt="image" src="images/tu1_1.png" />
 					</div>
@@ -98,7 +96,9 @@
 				</fieldset>
 				<div
 					style="padding-left: 100px; padding-right: 100px; font-size: 18px; font-family: Calibri, sans-serif;">
-					<p>一个0至100之间的整数，表示小明同学的CS100成绩。CS100以等级制记录成绩，成绩将仅在A+至F中计算。</p>
+					<p>两个正整数m, n.
+						保证m, n 小于 10^7
+					</p>
 				</div>
 
 				<fieldset class="layui-elem-field layui-field-title">
@@ -106,8 +106,7 @@
 				</fieldset>
 				<div
 					style="padding-left: 100px; padding-right: 100px; font-size: 18px; font-family: Calibri, sans-serif;">
-					<p>输出格式：<code>Ming is in class * with GPA *</code>
-					</p><p>第一处*输出小明的等级，第二处*输出小明的GPA（1位小数）。末尾没有句号与空格。
+					<p>一个整数，即m, n的最大公约数
 					</p>
 				</div>
 
@@ -116,13 +115,13 @@
 						<fieldset class="layui-elem-field layui-field-title">
 							<legend>样例输入1</legend>
 						</fieldset>
-						<pre><code>100</code></pre>
+						<pre><code>48 60</code></pre>
 					</div>
 					<div class="layui-col-xs6">
 						<fieldset class="layui-elem-field layui-field-title">
 							<legend>样例输出1</legend>
 						</fieldset>
-						<pre><code>Ming is in class A+ with GPA 4.0</code></pre>
+						<pre><code>12</code></pre>
 					</div>
 				</div>
 
@@ -312,12 +311,12 @@
 	<script>
 		var compileInput = "0";
 		var runcode = 7; // C
-		var initCode = "#include <stdio.h>\n\nint main(void) { \n    // Warning: 'int main' is unchangeable! \n    // Otherwise it will cause Pre-Test Error.\n\n    // YOUR CODE HERE.\n    return 0;\n}\n\n\n";
+		var initCode = '#include <stdio.h>\n\nlong gcd(long m, long n) {\n\n    // Your code here...\n\n}\n\nint main()\n{\n    long m, n;\n    scanf("%d %d", &m, &n);\n    \n    long result = gcd(m, n);\n\n    printf("%d", result);\n    return 0;\n}\n';
 		var timeLimit = 1;
 		var stdList = ['1001'];
 		var orgName = 'testcasecommunity';
 		var repoName = 'CS100';
-		var issueID = 9;
+		var issueID = 10;
 
 		if (localStorage.getItem(repoName + issueID)) {
 			editor.setValue(localStorage.getItem(repoName + issueID));
